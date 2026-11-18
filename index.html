@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>CPS中转站</title>
+    <style>
+      :root {
+        --bg: #f3f3f0;
+        --surface: #ffffff;
+        --ink: #1d1f1c;
+        --ink-2: #5b6057;
+        --line: #e4e6e0;
+        --shadow-card: 0 1px 2px rgba(28, 30, 26, 0.05), 0 10px 28px rgba(28, 30, 26, 0.07);
+        --shadow-pop: 0 2px 4px rgba(28, 30, 26, 0.06), 0 16px 36px rgba(28, 30, 26, 0.10);
+
+        --hero-1: #ffd83d;
+        --hero-2: #ffa41f;
+        --hero-3: #ff7a1a;
+        --hero-ink: #422a00;
+        --hero-ink-2: #6b4a12;
+        --hero-chip-bg: rgba(255, 255, 255, 0.55);
+        --hero-ring: rgba(255, 255, 255, 0.35);
+
+        --yellow: #ffd100;
+        --yellow-ink: #4a3800;
+        --blue: #287dfa;
+        --blue-deep: #1b63e0;
+        --blue-soft: #e8f1fe;
+        --orange: #ff6a00;
+        --green: #178a43;
+        --green-soft: #e2f5e8;
+        --muted-bg: #edeee9;
+
+        --radius-lg: 20px;
+        --radius-md: 14px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121311;
+          --surface: #1e201d;
+          --ink: #eef0ea;
+          --ink-2: #a3a99d;
+          --line: #31342e;
+          --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 28px rgba(0, 0, 0, 0.35);
+          --shadow-pop: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 36px rgba(0, 0, 0, 0.45);
+
+          --hero-1: #7a5c08;
+          --hero-2: #8a5410;
+          --hero-3: #8f4510;
+          --hero-ink: #ffedb3;
+          --hero-ink-2: #e8cf8e;
+          --hero-chip-bg: rgba(0, 0, 0, 0.28);
+          --hero-ring: rgba(255, 220, 130, 0.22);
+
+          --blue: #6ea8ff;
+          --blue-deep: #4c8dff;
+          --blue-soft: #1d2c47;
+          --green: #5ec97e;
+          --green-soft: #173324;
+          --muted-bg: #2a2d28;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+        line-height: 1.55;
+      }
+      main {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 18px 16px 44px;
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        padding: 28px 24px 24px;
+        background: linear-gradient(128deg, var(--hero-1) 0%, var(--hero-2) 58%, var(--hero-3) 100%);
+        color: var(--hero-ink);
+        box-shadow: var(--shadow-pop);
+      }
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        border: 26px solid var(--hero-ring);
+        pointer-events: none;
+      }
+      .hero::before { width: 190px; height: 190px; right: -70px; top: -90px; }
+      .hero::after { width: 120px; height: 120px; right: 64px; bottom: -84px; border-width: 18px; }
+      .hero-tag {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--hero-chip-bg);
+        border-radius: 999px;
+        padding: 4px 12px;
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        margin-bottom: 14px;
+      }
+      .hero-tag svg { width: 14px; height: 14px; flex: 0 0 auto; }
+      .hero h1 {
+        position: relative;
+        margin: 0 0 10px;
+        font-size: 30px;
+        line-height: 1.28;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+      }
+      .hero p {
+        position: relative;
+        margin: 0;
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: var(--hero-ink-2);
+        max-width: 34em;
+      }
+      .hero p strong { color: var(--hero-ink); }
+
+      /* ---------- Steps ---------- */
+      .steps {
+        display: flex;
+        align-items: stretch;
+        gap: 4px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card);
+        padding: 16px 10px;
+        margin: -14px 12px 30px;
+        position: relative;
+      }
+      .step {
+        flex: 1 1 0;
+        min-width: 0;
+        text-align: center;
+        padding: 0 4px;
+      }
+      .step .num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px; height: 28px;
+        border-radius: 50%;
+        background: linear-gradient(140deg, var(--hero-2), var(--hero-3));
+        color: #fff;
+        font-weight: 800;
+        font-size: 14px;
+        margin-bottom: 7px;
+        box-shadow: 0 3px 8px rgba(255, 122, 26, 0.35);
+      }
+      @media (prefers-color-scheme: dark) {
+        .step .num { color: #1c1503; background: linear-gradient(140deg, #ffd83d, #ffa41f); box-shadow: none; }
+      }
+      .step p { margin: 0; font-size: 12.5px; color: var(--ink-2); line-height: 1.5; }
+      .step p b { display: block; color: var(--ink); font-size: 14.5px; margin-bottom: 1px; }
+      .step-arrow {
+        align-self: center;
+        flex: 0 0 auto;
+        color: var(--ink-2);
+        opacity: 0.45;
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      /* ---------- Sections ---------- */
+      section { margin-bottom: 30px; }
+      .sec-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 2px 14px;
+      }
+      .sec-head .bar {
+        width: 5px; height: 20px;
+        border-radius: 3px;
+        flex: 0 0 auto;
+      }
+      .bar-mt { background: linear-gradient(180deg, var(--hero-2), var(--hero-3)); }
+      .bar-trip { background: linear-gradient(180deg, var(--blue), var(--blue-deep)); }
+      .bar-faq { background: var(--ink-2); }
+      .sec-head h2 { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: -0.01em; }
+      .sec-head span { font-size: 13px; color: var(--ink-2); margin-left: auto; text-align: right; }
+
+      /* ---------- Cards ---------- */
+      .card {
+        position: relative;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: 18px;
+        margin-bottom: 12px;
+        box-shadow: var(--shadow-card);
+      }
+      .card-live {
+        border: 1.5px solid var(--blue);
+        box-shadow: 0 2px 4px rgba(40, 125, 250, 0.10), 0 16px 34px rgba(40, 125, 250, 0.16);
+      }
+      @media (prefers-color-scheme: dark) {
+        .card-live { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 34px rgba(0, 0, 0, 0.45); }
+      }
+      .card-top {
+        display: flex;
+        align-items: flex-start;
+        gap: 13px;
+      }
+      .mark {
+        flex: 0 0 auto;
+        width: 50px; height: 50px;
+        border-radius: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 16px;
+        letter-spacing: 0.02em;
+      }
+      .mark-mt { background: linear-gradient(145deg, #ffe14d, #ffd100); color: var(--yellow-ink); box-shadow: inset 0 -3px 0 rgba(160, 110, 0, 0.18); }
+      .mark-ct { background: linear-gradient(145deg, #4b93ff, #1f6ef2); color: #fff; box-shadow: inset 0 -3px 0 rgba(6, 50, 130, 0.25); }
+      .mark-fz { background: linear-gradient(145deg, #ff8a2a, #ff5f00); color: #fff; box-shadow: inset 0 -3px 0 rgba(130, 50, 0, 0.22); }
+      .card-body { flex: 1 1 auto; min-width: 0; }
+      .card h3 { margin: 3px 0 4px; font-size: 17px; font-weight: 750; line-height: 1.35; }
+      .card .desc { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.6; }
+      .badge {
+        flex: 0 0 auto;
+        margin-left: auto;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 999px;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .badge-live { background: var(--green-soft); color: var(--green); }
+      .badge-live::before {
+        content: "";
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+      .badge-soon { background: var(--muted-bg); color: var(--ink-2); }
+
+      .go {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 16px;
+        min-height: 50px;
+        border-radius: var(--radius-md);
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        border: 0;
+        width: 100%;
+        cursor: pointer;
+        font-family: inherit;
+        transition: transform 0.12s ease, box-shadow 0.12s ease;
+      }
+      .go-ct {
+        background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%);
+        color: #fff;
+        box-shadow: 0 8px 18px rgba(40, 125, 250, 0.32);
+      }
+      .go-ct:hover { box-shadow: 0 10px 22px rgba(40, 125, 250, 0.4); }
+      .go-ct:active { transform: scale(0.985); }
+      .go-off {
+        background: var(--muted-bg);
+        color: var(--ink-2);
+        cursor: default;
+        font-weight: 600;
+        font-size: 15px;
+      }
+      .card.is-off { box-shadow: none; }
+      .card.is-off h3 { color: var(--ink-2); }
+      .card.is-off .mark { filter: grayscale(0.55); opacity: 0.6; box-shadow: none; }
+
+      .sub-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+      .copy-btn {
+        min-height: 40px;
+        padding: 0 16px;
+        border-radius: 999px;
+        border: 1px solid var(--blue);
+        background: var(--blue-soft);
+        color: var(--blue-deep);
+        font-size: 14px;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        transition: transform 0.12s ease;
+      }
+      @media (prefers-color-scheme: dark) { .copy-btn { color: var(--blue); } }
+      .copy-btn:active { transform: scale(0.97); }
+      .copy-tip { font-size: 13px; color: var(--ink-2); }
+      .copy-tip.ok { color: var(--green); font-weight: 600; }
+
+      /* ---------- FAQ / notes ---------- */
+      .notes {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card);
+        padding: 4px 18px;
+      }
+      .notes details { border-bottom: 1px solid var(--line); }
+      .notes details:last-child { border-bottom: 0; }
+      .notes summary {
+        min-height: 52px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        list-style: none;
+        padding: 4px 0;
+      }
+      .notes summary::-webkit-details-marker { display: none; }
+      .notes summary::after {
+        content: "";
+        flex: 0 0 auto;
+        margin-left: auto;
+        width: 8px; height: 8px;
+        border-right: 2px solid var(--ink-2);
+        border-bottom: 2px solid var(--ink-2);
+        transform: rotate(45deg);
+        transition: transform 0.18s ease;
+      }
+      .notes details[open ] summary::after { transform: rotate(225deg); }
+      .notes details p { margin: 0 0 16px; font-size: 14px; color: var(--ink-2); line-height: 1.65; }
+
+      footer {
+        margin-top: 34px;
+        padding: 16px 18px;
+        border: 1px dashed var(--line);
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        color: var(--ink-2);
+        line-height: 1.65;
+        text-align: center;
+      }
+
+      @media (max-width: 400px) {
+        .hero { padding: 24px 18px 20px; }
+        .hero h1 { font-size: 26px; }
+        .steps { margin-left: 4px; margin-right: 4px; padding: 14px 6px; }
+        .card { padding: 16px 14px; }
+        .sec-head span { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <span class="hero-tag">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2.5 2.5 0 0 0 0 5v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2.5 2.5 0 0 0 0-5Z" stroke="currentColor" stroke-width="1.8"/><path d="M13 5v2m0 4v2m0 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1 3.4"/></svg>
+          领券入口合集
+        </span>
+        <h1>下单前先点一下<br />能领的券别漏了</h1>
+        <p>订酒店、点外卖之前，<strong>先从这页的入口进去领券，再正常下单</strong>，价格不变，该抵扣的券自动抵扣。携程酒店入口现在就能用；美团几个入口的链接正在更新，好了会直接换在这页。建议先收藏，每次下单前过一遍。</p>
+      </div>
+
+      <div class="steps" aria-label="使用方法">
+        <div class="step">
+          <span class="num">1</span>
+          <p><b>点入口</b>选你要用的那一项</p>
+        </div>
+        <span class="step-arrow" aria-hidden="true">›</span>
+        <div class="step">
+          <span class="num">2</span>
+          <p><b>先领券</b>页面里的券先领到手</p>
+        </div>
+        <span class="step-arrow" aria-hidden="true">›</span>
+        <div class="step">
+          <span class="num">3</span>
+          <p><b>再下单</b>照常买，结算时抵扣</p>
+        </div>
+      </div>
+
+      <section aria-labelledby="h-mt">
+        <div class="sec-head">
+          <span class="bar bar-mt" aria-hidden="true"></span>
+          <h2 id="h-mt">美团 · 吃喝玩乐</h2>
+          <span>外卖 / 到店 / 闪购</span>
+        </div>
+
+        <div class="card is-off">
+          <div class="card-top">
+            <div class="mark mark-mt" aria-hidden="true">美团</div>
+            <div class="card-body">
+              <h3>美团外卖节</h3>
+              <p class="desc">帮你吃更好——点外卖前先进来领红包，再回美团下单。</p>
+            </div>
+            <span class="badge badge-soon">链接更新中</span>
+          </div>
+          <span class="go go-off" aria-disabled="true">入口链接更新中，稍后再来</span>
+        </div>
+
+        <div class="card is-off">
+          <div class="card-top">
+            <div class="mark mark-mt" aria-hidden="true">美团</div>
+            <div class="card-body">
+              <h3>吃喝玩乐 · 每日福利</h3>
+              <p class="desc">内部优惠 3 折起，每周五还可抢大额神券——火锅、奶茶、团购代金券都在这里。</p>
+            </div>
+            <span class="badge badge-soon">链接更新中</span>
+          </div>
+          <span class="go go-off" aria-disabled="true">入口链接更新中，稍后再来</span>
+        </div>
+
+        <div class="card is-off">
+          <div class="card-top">
+            <div class="mark mark-mt" aria-hidden="true">美团</div>
+            <div class="card-body">
+              <h3>美团闪购</h3>
+              <p class="desc">红包天天领，平均 30 分钟送达——买日用品、零食饮料先领红包再下单。</p>
+            </div>
+            <span class="badge badge-soon">链接更新中</span>
+          </div>
+          <span class="go go-off" aria-disabled="true">入口链接更新中，稍后再来</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-trip">
+        <div class="sec-head">
+          <span class="bar bar-trip" aria-hidden="true"></span>
+          <h2 id="h-trip">酒店 · 旅行</h2>
+          <span>订房先领券再比价</span>
+        </div>
+
+        <div class="card card-live">
+          <div class="card-top">
+            <div class="mark mark-ct" aria-hidden="true">携程</div>
+            <div class="card-body">
+              <h3>携程酒店预订</h3>
+              <p class="desc">订酒店从这个入口进，国内、海外酒店都能订，订之前先看页面有没有可领的优惠。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-ct" href="https://t.ctrip.cn/1E86ggg" target="_blank" rel="noopener">打开携程订酒店 →</a>
+          <div class="sub-actions">
+            <button class="copy-btn" type="button" id="copyCtrip">复制链接</button>
+            <span class="copy-tip" id="copyTip">打不开时，复制后粘贴到浏览器打开</span>
+          </div>
+        </div>
+
+        <div class="card is-off">
+          <div class="card-top">
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="card-body">
+              <h3>飞猪旅行</h3>
+              <p class="desc">酒店、机票、门票——入口正在接入，上线后补到这里。</p>
+            </div>
+            <span class="badge badge-soon">即将上线</span>
+          </div>
+          <span class="go go-off" aria-disabled="true">即将上线</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-faq">
+        <div class="sec-head">
+          <span class="bar bar-faq" aria-hidden="true"></span>
+          <h2 id="h-faq">常见问题</h2>
+        </div>
+        <div class="notes">
+          <details>
+            <summary>从这里进，会不会比直接买更贵？</summary>
+            <p>不会。同一个商品、同一次下单，价格和你在 App 里直接搜到的是一样的，区别只是下单前多领了一步券，能抵就抵，不能抵也不多花钱。</p>
+          </details>
+          <details>
+            <summary>领了券，下单时没抵扣怎么办？</summary>
+            <p>先确认顺序：一定要先点这页的入口、把券领到账，再去下单；先下单再领券是抵不了的。另外有些券有使用门槛和有效期，以领券页面上写的规则为准。</p>
+          </details>
+          <details>
+            <summary>美团的几个入口为什么还点不了？</summary>
+            <p>美团入口链接正在更新，好了会第一时间换上。携程酒店入口现在就能正常用，订酒店先用它。</p>
+          </details>
+          <details>
+            <summary>这页要一直留着吗？</summary>
+            <p>建议收藏。入口链接有变动时会直接在这页更新，你收藏的还是这一页，不用再找新链接。</p>
+          </details>
+        </div>
+      </section>
+
+      <footer>
+        券和活动的具体金额、门槛以点开后平台页面显示为准，活动过期或规则调整时以平台为准。
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        var btn = document.getElementById('copyCtrip');
+        var tip = document.getElementById('copyTip');
+        var link = 'https://t.ctrip.cn/1E86ggg';
+        btn.addEventListener('click', function () {
+          function done() {
+            tip.textContent = '已复制，去浏览器粘贴打开';
+            tip.classList.add('ok');
+          }
+          function fallback() {
+            var ta = document.createElement('textarea');
+            ta.value = link;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); done(); }
+            catch (e) { tip.textContent = link; }
+            document.body.removeChild(ta);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(link).then(done, fallback);
+          } else {
+            fallback();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
