@@ -129,6 +129,38 @@
         max-width: 34em;
       }
       .hero p strong { color: var(--hero-ink); }
+      .hero p.hero-sub { font-size: 16.5px; font-weight: 700; color: var(--hero-ink); letter-spacing: 0.05em; }
+      .hero-cta {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 18px;
+        min-height: 56px;
+        padding: 12px 20px;
+        border-radius: 14px;
+        background: #fffdf5;
+        color: #8a4b00;
+        font-size: 18px;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 10px 22px rgba(120, 60, 0, 0.28);
+        transition: transform 0.12s ease;
+      }
+      .hero-cta:active { transform: scale(0.985); }
+      @media (prefers-color-scheme: dark) {
+        .hero-cta { background: #ffedb3; color: #4a2c00; box-shadow: none; }
+      }
+      .hero-steps {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 16px;
+        margin-top: 12px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--hero-ink-2);
+      }
 
       /* ---------- Steps ---------- */
       .steps {
@@ -501,32 +533,22 @@
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2.5 2.5 0 0 0 0 5v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2.5 2.5 0 0 0 0-5Z" stroke="currentColor" stroke-width="1.8"/><path d="M13 5v2m0 4v2m0 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1 3.4"/></svg>
           领券入口合集
         </span>
-        <h1>下单前先点一下<br />能领的券别漏了</h1>
-        <p>订酒店、点外卖之前，<strong>先从这页的入口进去领券，再正常下单</strong>，价格不变，该抵扣的券自动抵扣。美团外卖节、美团酒店、美团爆款酒店、携程酒店和飞猪九个入口现在就能用；美团另外两个入口的链接正在更新，好了会直接换在这页。建议先收藏，每次下单前过一遍。</p>
-      </div>
-
-      <div class="steps" aria-label="使用方法">
-        <div class="step">
-          <span class="num">1</span>
-          <p><b>点入口</b>选你要用的那一项</p>
-        </div>
-        <span class="step-arrow" aria-hidden="true">›</span>
-        <div class="step">
-          <span class="num">2</span>
-          <p><b>先领券</b>页面里的券先领到手</p>
-        </div>
-        <span class="step-arrow" aria-hidden="true">›</span>
-        <div class="step">
-          <span class="num">3</span>
-          <p><b>再下单</b>照常买，结算时抵扣</p>
+        <h1>下单前先领券，<br />同一笔少付几块到几十块</h1>
+        <p class="hero-sub">官方活动 · 免费 · 不用填手机号</p>
+        <a class="hero-cta" href="http://dpurl.cn/S5vzRkTz" target="_blank" rel="noopener">点外卖前，先点这领红包 →</a>
+        <div class="hero-steps" aria-label="领红包步骤">
+          <span>① 点按钮领红包</span>
+          <span>② 复制口令</span>
+          <span>③ 打开对应App粘贴使用</span>
         </div>
       </div>
 
-      <section aria-labelledby="h-mt">
+
+      <section aria-labelledby="h-takeout">
         <div class="sec-head">
           <span class="bar bar-mt" aria-hidden="true"></span>
-          <h2 id="h-mt">美团 · 吃喝玩乐</h2>
-          <span>外卖 / 到店 / 闪购</span>
+          <h2 id="h-takeout">点外卖前</h2>
+          <span>先领红包再下单</span>
         </div>
 
         <div class="card card-live-mt">
@@ -538,19 +560,28 @@
             </div>
             <span class="badge badge-live">可直接用</span>
           </div>
-          <a class="go go-mt" href="http://dpurl.cn/MNSD2kKz" target="_blank" rel="noopener">点我领取大额红包 →</a>
-          <p class="mt-code"><b>团口令：</b><span>1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰27NjE0NDJlMDg💰</span></p>
+          <a class="go go-mt" href="http://dpurl.cn/S5vzRkTz" target="_blank" rel="noopener">点我领取大额红包 →</a>
+          <p class="mt-code"><b>团口令：</b><span>1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰lmMjg2MjMyYzU💰</span></p>
           <div class="sub-actions">
             <button class="copy-btn copy-btn-mt" type="button" id="copyMeituan">复制团口令</button>
             <span class="copy-tip" id="copyTipMt">复制整条，打开美团即可领取</span>
           </div>
         </div>
 
+      </section>
+
+      <section aria-labelledby="h-hotel">
+        <div class="sec-head">
+          <span class="bar bar-trip" aria-hidden="true"></span>
+          <h2 id="h-hotel">订酒店前</h2>
+          <span>先领券再比价</span>
+        </div>
+
         <div class="card card-live-mt">
           <div class="card-top">
             <div class="mark mark-mt" aria-hidden="true">美团</div>
             <div class="card-body">
-              <h3>美团酒店 119元起全国酒店 最高立减200元</h3>
+              <h3>最高减200元 · 美团酒店 119元起全国酒店</h3>
               <p class="desc">全国酒店 119 元起，最高立减 200 元——订酒店前先进来领券，再回美团下单。</p>
             </div>
             <span class="badge badge-live">可直接用</span>
@@ -567,7 +598,7 @@
           <div class="card-top">
             <div class="mark mark-mt" aria-hidden="true">美团</div>
             <div class="card-body">
-              <h3>美团爆款酒店 全国爆款酒店3折起 最高立减200元</h3>
+              <h3>3折起 · 最高减200元 · 美团爆款酒店</h3>
               <p class="desc">全国爆款酒店 3 折起，最高立减 200 元——订酒店前先进来领券，再回美团下单。</p>
             </div>
             <span class="badge badge-live">可直接用</span>
@@ -580,36 +611,112 @@
           </div>
         </div>
 
-        <div class="card is-off">
+        <div class="card card-live-fz">
           <div class="card-top">
-            <div class="mark mark-mt" aria-hidden="true">美团</div>
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
             <div class="card-body">
-              <h3>吃喝玩乐 · 每日福利</h3>
-              <p class="desc">内部优惠 3 折起，每周五还可抢大额神券——火锅、奶茶、团购代金券都在这里。</p>
+              <h3>200元惊喜红包 · 飞猪百元好房</h3>
+              <p class="desc">百元住好房，还能领 200 元惊喜红包——订酒店前先进来领券，再回飞猪下单。</p>
             </div>
-            <span class="badge badge-soon">链接更新中</span>
+            <span class="badge badge-live">可直接用</span>
           </div>
-          <span class="go go-off" aria-disabled="true">入口链接更新中，稍后再来</span>
+          <a class="go go-fz" href="https://a.feizhu.com/18dg37" target="_blank" rel="noopener">点我领200元惊喜红包 →</a>
         </div>
 
-        <div class="card is-off">
+        <div class="card card-live-fz">
           <div class="card-top">
-            <div class="mark mark-mt" aria-hidden="true">美团</div>
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
             <div class="card-body">
-              <h3>美团闪购</h3>
-              <p class="desc">红包天天领，平均 30 分钟送达——买日用品、零食饮料先领红包再下单。</p>
+              <h3>一晚至高10000积分 · 暖冬双喜 希尔顿×格兰云天积分闪促 11.11限时开抢</h3>
+              <p class="desc">希尔顿 × 格兰云天积分闪促，一晚至高 10000 积分，11.11 限时开抢——先点进来看看再下单。</p>
             </div>
-            <span class="badge badge-soon">链接更新中</span>
+            <span class="badge badge-live">可直接用</span>
           </div>
-          <span class="go go-off" aria-disabled="true">入口链接更新中，稍后再来</span>
+          <a class="go go-fz" href="https://a.feizhu.com/36wrQj" target="_blank" rel="noopener">点我去抢积分闪促 →</a>
         </div>
-      </section>
 
-      <section aria-labelledby="h-trip">
-        <div class="sec-head">
-          <span class="bar bar-trip" aria-hidden="true"></span>
-          <h2 id="h-trip">酒店 · 旅行</h2>
-          <span>订房先领券再比价</span>
+        <div class="card card-live-fz">
+          <div class="card-top">
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="card-body">
+              <h3>全网低价5折起 · 飞猪酒店闪购</h3>
+              <p class="desc">全网低价 5 折起——订酒店前先进来看看闪购价，再回飞猪下单。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-fz" href="https://a.feizhu.com/4OMpos" target="_blank" rel="noopener">点我去抢酒店闪购 →</a>
+        </div>
+
+        <div class="card card-live-fz">
+          <div class="card-top">
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="card-body">
+              <h3>微信小程序专享优惠 叠加使用更优惠</h3>
+              <p class="desc">微信小程序专享优惠，能和其他优惠叠加使用——下单前先进来领。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-fz" href="https://a.feizhu.com/2GsnxB" target="_blank" rel="noopener">点我领专享优惠 →</a>
+        </div>
+
+        <div class="card card-live-fz">
+          <div class="card-top">
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="card-body">
+              <h3>单笔最高减600元 · 政府文旅补贴</h3>
+              <p class="desc">政府文旅补贴，单笔最高立减 600 元——订酒店前先进来领，能领到就直接抵。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-fz" href="https://a.feizhu.com/47yAnB" target="_blank" rel="noopener">点我领文旅补贴 →</a>
+        </div>
+
+        <div class="card card-live-fz">
+          <div class="card-top">
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="card-body">
+              <h3>低至5折起 · 飞猪民宿低价抢先订 领券下单</h3>
+              <p class="desc">民宿低价抢先订，领券下单低至 5 折起——住民宿前先进来领券。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-fz" href="https://a.feizhu.com/2Vdg11" target="_blank" rel="noopener">点我领券订民宿 →</a>
+        </div>
+
+        <div class="card card-live-fz">
+          <div class="card-top">
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="card-body">
+              <h3>至高膨胀20倍 · 里程抵房费 订酒店折上折</h3>
+              <p class="desc">里程抵房费，订酒店折上折，至高膨胀 20 倍——有飞猪里程的先从这里进。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-fz" href="https://a.feizhu.com/1q6hYY" target="_blank" rel="noopener">点我用里程抵房费 →</a>
+        </div>
+
+        <div class="card card-live-fz">
+          <div class="card-top">
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="card-body">
+              <h3>200元大额券 · 微信小程序专享</h3>
+              <p class="desc">微信小程序专享 200 元大额券——订酒店前先进来领到手，再下单抵扣。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-fz" href="https://a.feizhu.com/0fPeRj" target="_blank" rel="noopener">点我领200元大额券 →</a>
+        </div>
+
+        <div class="card card-live-fz">
+          <div class="card-top">
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="card-body">
+              <h3>封顶减300元 · 酒店百亿补贴</h3>
+              <p class="desc">酒店百亿补贴，封顶减 300 元——订酒店前先进来看看补贴价。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-fz" href="https://a.feizhu.com/1oMvVs" target="_blank" rel="noopener">点我领百亿补贴 →</a>
         </div>
 
         <div class="card card-live">
@@ -724,112 +831,47 @@
           </div>
         </div>
 
-        <div class="card card-live-fz">
-          <div class="card-top">
-            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
-            <div class="card-body">
-              <h3>飞猪百元好房 领200元惊喜红包</h3>
-              <p class="desc">百元住好房，还能领 200 元惊喜红包——订酒店前先进来领券，再回飞猪下单。</p>
-            </div>
-            <span class="badge badge-live">可直接用</span>
-          </div>
-          <a class="go go-fz" href="https://a.feizhu.com/18dg37" target="_blank" rel="noopener">点我领200元惊喜红包 →</a>
+      </section>
+
+      <section aria-labelledby="h-other">
+        <div class="sec-head">
+          <span class="bar bar-faq" aria-hidden="true"></span>
+          <h2 id="h-other">到店 · 闪购</h2>
+          <span>先领券再下单</span>
         </div>
 
-        <div class="card card-live-fz">
+        <div class="card card-live-mt">
           <div class="card-top">
-            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="mark mark-mt" aria-hidden="true">美团</div>
             <div class="card-body">
-              <h3>暖冬双喜 希尔顿×格兰云天积分闪促 一晚至高10000积分 11.11限时开抢</h3>
-              <p class="desc">希尔顿 × 格兰云天积分闪促，一晚至高 10000 积分，11.11 限时开抢——先点进来看看再下单。</p>
+              <h3>内部优惠3折起 · 吃喝玩乐 每日福利 · 每周五可抢大额神券</h3>
+              <p class="desc">内部优惠 3 折起，每周五还可抢大额神券——火锅、奶茶、团购代金券都在这里，下单前先进来领。</p>
             </div>
             <span class="badge badge-live">可直接用</span>
           </div>
-          <a class="go go-fz" href="https://a.feizhu.com/36wrQj" target="_blank" rel="noopener">点我去抢积分闪促 →</a>
+          <a class="go go-mt" href="http://dpurl.cn/apY8p9Lz" target="_blank" rel="noopener">点我领每日福利 →</a>
+          <p class="mt-code"><b>团口令：</b><span>1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰nzMDA4Y2NhMGM💰</span></p>
+          <div class="sub-actions">
+            <button class="copy-btn copy-btn-mt" type="button" id="copyMeituanFun">复制团口令</button>
+            <span class="copy-tip" id="copyTipMtFun">复制整条，打开美团即可领取</span>
+          </div>
         </div>
 
-        <div class="card card-live-fz">
+        <div class="card card-live-mt">
           <div class="card-top">
-            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="mark mark-mt" aria-hidden="true">美团</div>
             <div class="card-body">
-              <h3>飞猪酒店闪购 全网低价5折起</h3>
-              <p class="desc">全网低价 5 折起——订酒店前先进来看看闪购价，再回飞猪下单。</p>
+              <h3>红包天天领综合会场 天天领闪购品类红包</h3>
+              <p class="desc">红包天天领，平均 30 分钟送达——买日用品、零食饮料先领红包再下单。</p>
             </div>
             <span class="badge badge-live">可直接用</span>
           </div>
-          <a class="go go-fz" href="https://a.feizhu.com/4OMpos" target="_blank" rel="noopener">点我去抢酒店闪购 →</a>
-        </div>
-
-        <div class="card card-live-fz">
-          <div class="card-top">
-            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
-            <div class="card-body">
-              <h3>微信小程序专享优惠 叠加使用更优惠</h3>
-              <p class="desc">微信小程序专享优惠，能和其他优惠叠加使用——下单前先进来领。</p>
-            </div>
-            <span class="badge badge-live">可直接用</span>
+          <a class="go go-mt" href="http://dpurl.cn/d5VmDhRz" target="_blank" rel="noopener">点我领闪购红包 →</a>
+          <p class="mt-code"><b>团口令：</b><span>1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰o6NjRjMGJmM2I💰</span></p>
+          <div class="sub-actions">
+            <button class="copy-btn copy-btn-mt" type="button" id="copyMeituanFlash">复制团口令</button>
+            <span class="copy-tip" id="copyTipMtFlash">复制整条，打开美团即可领取</span>
           </div>
-          <a class="go go-fz" href="https://a.feizhu.com/2GsnxB" target="_blank" rel="noopener">点我领专享优惠 →</a>
-        </div>
-
-        <div class="card card-live-fz">
-          <div class="card-top">
-            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
-            <div class="card-body">
-              <h3>领政府文旅补贴 单笔最高立减600元</h3>
-              <p class="desc">政府文旅补贴，单笔最高立减 600 元——订酒店前先进来领，能领到就直接抵。</p>
-            </div>
-            <span class="badge badge-live">可直接用</span>
-          </div>
-          <a class="go go-fz" href="https://a.feizhu.com/47yAnB" target="_blank" rel="noopener">点我领文旅补贴 →</a>
-        </div>
-
-        <div class="card card-live-fz">
-          <div class="card-top">
-            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
-            <div class="card-body">
-              <h3>飞猪民宿低价抢先订 领券下单低至5折起</h3>
-              <p class="desc">民宿低价抢先订，领券下单低至 5 折起——住民宿前先进来领券。</p>
-            </div>
-            <span class="badge badge-live">可直接用</span>
-          </div>
-          <a class="go go-fz" href="https://a.feizhu.com/2Vdg11" target="_blank" rel="noopener">点我领券订民宿 →</a>
-        </div>
-
-        <div class="card card-live-fz">
-          <div class="card-top">
-            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
-            <div class="card-body">
-              <h3>里程抵房费 订酒店折上折 至高膨胀20倍</h3>
-              <p class="desc">里程抵房费，订酒店折上折，至高膨胀 20 倍——有飞猪里程的先从这里进。</p>
-            </div>
-            <span class="badge badge-live">可直接用</span>
-          </div>
-          <a class="go go-fz" href="https://a.feizhu.com/1q6hYY" target="_blank" rel="noopener">点我用里程抵房费 →</a>
-        </div>
-
-        <div class="card card-live-fz">
-          <div class="card-top">
-            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
-            <div class="card-body">
-              <h3>微信小程序专享 领200元大额券</h3>
-              <p class="desc">微信小程序专享 200 元大额券——订酒店前先进来领到手，再下单抵扣。</p>
-            </div>
-            <span class="badge badge-live">可直接用</span>
-          </div>
-          <a class="go go-fz" href="https://a.feizhu.com/0fPeRj" target="_blank" rel="noopener">点我领200元大额券 →</a>
-        </div>
-
-        <div class="card card-live-fz">
-          <div class="card-top">
-            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
-            <div class="card-body">
-              <h3>酒店百亿补贴封顶减300元</h3>
-              <p class="desc">酒店百亿补贴，封顶减 300 元——订酒店前先进来看看补贴价。</p>
-            </div>
-            <span class="badge badge-live">可直接用</span>
-          </div>
-          <a class="go go-fz" href="https://a.feizhu.com/1oMvVs" target="_blank" rel="noopener">点我领百亿补贴 →</a>
         </div>
       </section>
 
@@ -848,8 +890,8 @@
             <p>先确认顺序：一定要先点这页的入口、把券领到账，再去下单；先下单再领券是抵不了的。另外有些券有使用门槛和有效期，以领券页面上写的规则为准。</p>
           </details>
           <details>
-            <summary>美团的几个入口为什么还点不了？</summary>
-            <p>美团外卖节、美团酒店和美团爆款酒店已经能用了。吃喝玩乐和闪购这两个入口的链接还在更新，好了会第一时间换上。携程酒店入口也能正常用。</p>
+            <summary>美团的入口都能用了吗？</summary>
+            <p>都能用了：外卖节、酒店、爆款酒店、吃喝玩乐、闪购五个入口全部可直接点。携程酒店入口也能正常用。</p>
           </details>
           <details>
             <summary>这页要一直留着吗？</summary>
@@ -859,7 +901,8 @@
       </section>
 
       <footer>
-        券和活动的具体金额、门槛以点开后平台页面显示为准，活动过期或规则调整时以平台为准。
+        券和活动的具体金额、门槛以点开后平台页面显示为准，活动过期或规则调整时以平台为准。<br />
+        本站整理各平台官方优惠，部分链接为推广链接，佣金不增加你的支付金额，优惠以平台页面为准。
       </footer>
     </main>
 
@@ -893,9 +936,11 @@
           });
         }
         attachCopy('copyCtrip', 'copyTip', 'https://t.ctrip.cn/1E86ggg', '已复制，去浏览器粘贴打开');
-        attachCopy('copyMeituan', 'copyTipMt', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰27NjE0NDJlMDg💰', '已复制，打开美团即可领取');
+        attachCopy('copyMeituan', 'copyTipMt', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰lmMjg2MjMyYzU💰', '已复制，打开美团即可领取');
         attachCopy('copyMeituanHotel', 'copyTipMtHotel', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰36NjNmYTcxZTM💰', '已复制，打开美团即可领取');
         attachCopy('copyMeituanHot', 'copyTipMtHot', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰3wZmI2MmY2NWQ💰', '已复制，打开美团即可领取');
+        attachCopy('copyMeituanFun', 'copyTipMtFun', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰nzMDA4Y2NhMGM💰', '已复制，打开美团即可领取');
+        attachCopy('copyMeituanFlash', 'copyTipMtFlash', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰o6NjRjMGJmM2I💰', '已复制，打开美团即可领取');
       })();
     </script>
   </body>
