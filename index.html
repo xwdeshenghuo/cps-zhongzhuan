@@ -209,8 +209,18 @@
         border: 1.5px solid var(--blue);
         box-shadow: 0 2px 4px rgba(40, 125, 250, 0.10), 0 16px 34px rgba(40, 125, 250, 0.16);
       }
+      .card-live-mt {
+        border: 1.5px solid var(--hero-2);
+        box-shadow: 0 2px 4px rgba(255, 164, 31, 0.12), 0 16px 34px rgba(255, 122, 26, 0.16);
+      }
+      .card-live-fz {
+        border: 1.5px solid var(--orange);
+        box-shadow: 0 2px 4px rgba(255, 106, 0, 0.12), 0 16px 34px rgba(255, 95, 0, 0.16);
+      }
       @media (prefers-color-scheme: dark) {
         .card-live { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 34px rgba(0, 0, 0, 0.45); }
+        .card-live-mt { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 34px rgba(0, 0, 0, 0.45); }
+        .card-live-fz { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 34px rgba(0, 0, 0, 0.45); }
       }
       .card-top {
         display: flex;
@@ -279,6 +289,20 @@
       }
       .go-ct:hover { box-shadow: 0 10px 22px rgba(40, 125, 250, 0.4); }
       .go-ct:active { transform: scale(0.985); }
+      .go-mt {
+        background: linear-gradient(135deg, var(--yellow) 0%, var(--hero-2) 100%);
+        color: var(--yellow-ink);
+        box-shadow: 0 8px 18px rgba(255, 164, 31, 0.35);
+      }
+      .go-mt:hover { box-shadow: 0 10px 22px rgba(255, 164, 31, 0.45); }
+      .go-mt:active { transform: scale(0.985); }
+      .go-fz {
+        background: linear-gradient(135deg, #ff8a2a 0%, #ff5f00 100%);
+        color: #fff;
+        box-shadow: 0 8px 18px rgba(255, 95, 0, 0.32);
+      }
+      .go-fz:hover { box-shadow: 0 10px 22px rgba(255, 95, 0, 0.42); }
+      .go-fz:active { transform: scale(0.985); }
       .go-off {
         background: var(--muted-bg);
         color: var(--ink-2);
@@ -312,8 +336,26 @@
       }
       @media (prefers-color-scheme: dark) { .copy-btn { color: var(--blue); } }
       .copy-btn:active { transform: scale(0.97); }
+      .copy-btn-mt {
+        border-color: var(--hero-2);
+        background: #fff7db;
+        color: var(--yellow-ink);
+      }
+      @media (prefers-color-scheme: dark) { .copy-btn-mt { background: #332a08; color: #ffd83d; } }
       .copy-tip { font-size: 13px; color: var(--ink-2); }
       .copy-tip.ok { color: var(--green); font-weight: 600; }
+      .mt-code {
+        margin: 12px 0 0;
+        font-size: 13.5px;
+        line-height: 1.65;
+        color: var(--ink-2);
+        background: var(--muted-bg);
+        border-radius: 10px;
+        padding: 10px 12px;
+        overflow-wrap: anywhere;
+      }
+      .mt-code b { color: var(--ink); }
+      .mt-code span { color: var(--ink); }
 
       /* ---------- Presale list ---------- */
       .presale {
@@ -460,7 +502,7 @@
           领券入口合集
         </span>
         <h1>下单前先点一下<br />能领的券别漏了</h1>
-        <p>订酒店、点外卖之前，<strong>先从这页的入口进去领券，再正常下单</strong>，价格不变，该抵扣的券自动抵扣。携程酒店入口现在就能用；美团几个入口的链接正在更新，好了会直接换在这页。建议先收藏，每次下单前过一遍。</p>
+        <p>订酒店、点外卖之前，<strong>先从这页的入口进去领券，再正常下单</strong>，价格不变，该抵扣的券自动抵扣。美团外卖节、美团酒店、美团爆款酒店、携程酒店和飞猪两个入口现在就能用；美团另外两个入口的链接正在更新，好了会直接换在这页。建议先收藏，每次下单前过一遍。</p>
       </div>
 
       <div class="steps" aria-label="使用方法">
@@ -487,16 +529,55 @@
           <span>外卖 / 到店 / 闪购</span>
         </div>
 
-        <div class="card is-off">
+        <div class="card card-live-mt">
           <div class="card-top">
             <div class="mark mark-mt" aria-hidden="true">美团</div>
             <div class="card-body">
-              <h3>美团外卖节</h3>
+              <h3>美团外卖节 点我领取大额红包</h3>
               <p class="desc">帮你吃更好——点外卖前先进来领红包，再回美团下单。</p>
             </div>
-            <span class="badge badge-soon">链接更新中</span>
+            <span class="badge badge-live">可直接用</span>
           </div>
-          <span class="go go-off" aria-disabled="true">入口链接更新中，稍后再来</span>
+          <a class="go go-mt" href="http://dpurl.cn/MNSD2kKz" target="_blank" rel="noopener">点我领取大额红包 →</a>
+          <p class="mt-code"><b>团口令：</b><span>1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰27NjE0NDJlMDg💰</span></p>
+          <div class="sub-actions">
+            <button class="copy-btn copy-btn-mt" type="button" id="copyMeituan">复制团口令</button>
+            <span class="copy-tip" id="copyTipMt">复制整条，打开美团即可领取</span>
+          </div>
+        </div>
+
+        <div class="card card-live-mt">
+          <div class="card-top">
+            <div class="mark mark-mt" aria-hidden="true">美团</div>
+            <div class="card-body">
+              <h3>美团酒店 119元起全国酒店 最高立减200元</h3>
+              <p class="desc">全国酒店 119 元起，最高立减 200 元——订酒店前先进来领券，再回美团下单。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-mt" href="http://dpurl.cn/9tBDG7vz" target="_blank" rel="noopener">点我领券订酒店 →</a>
+          <p class="mt-code"><b>团口令：</b><span>1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰36NjNmYTcxZTM💰</span></p>
+          <div class="sub-actions">
+            <button class="copy-btn copy-btn-mt" type="button" id="copyMeituanHotel">复制团口令</button>
+            <span class="copy-tip" id="copyTipMtHotel">复制整条，打开美团即可领取</span>
+          </div>
+        </div>
+
+        <div class="card card-live-mt">
+          <div class="card-top">
+            <div class="mark mark-mt" aria-hidden="true">美团</div>
+            <div class="card-body">
+              <h3>美团爆款酒店 全国爆款酒店3折起 最高立减200元</h3>
+              <p class="desc">全国爆款酒店 3 折起，最高立减 200 元——订酒店前先进来领券，再回美团下单。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-mt" href="http://dpurl.cn/SQLTq77z" target="_blank" rel="noopener">点我抢爆款酒店 →</a>
+          <p class="mt-code"><b>团口令：</b><span>1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰3wZmI2MmY2NWQ💰</span></p>
+          <div class="sub-actions">
+            <button class="copy-btn copy-btn-mt" type="button" id="copyMeituanHot">复制团口令</button>
+            <span class="copy-tip" id="copyTipMtHot">复制整条，打开美团即可领取</span>
+          </div>
         </div>
 
         <div class="card is-off">
@@ -643,16 +724,28 @@
           </div>
         </div>
 
-        <div class="card is-off">
+        <div class="card card-live-fz">
           <div class="card-top">
             <div class="mark mark-fz" aria-hidden="true">飞猪</div>
             <div class="card-body">
-              <h3>飞猪旅行</h3>
-              <p class="desc">酒店、机票、门票——入口正在接入，上线后补到这里。</p>
+              <h3>飞猪百元好房 领200元惊喜红包</h3>
+              <p class="desc">百元住好房，还能领 200 元惊喜红包——订酒店前先进来领券，再回飞猪下单。</p>
             </div>
-            <span class="badge badge-soon">即将上线</span>
+            <span class="badge badge-live">可直接用</span>
           </div>
-          <span class="go go-off" aria-disabled="true">即将上线</span>
+          <a class="go go-fz" href="https://a.feizhu.com/18dg37" target="_blank" rel="noopener">点我领200元惊喜红包 →</a>
+        </div>
+
+        <div class="card card-live-fz">
+          <div class="card-top">
+            <div class="mark mark-fz" aria-hidden="true">飞猪</div>
+            <div class="card-body">
+              <h3>暖冬双喜 希尔顿×格兰云天积分闪促 一晚至高10000积分 11.11限时开抢</h3>
+              <p class="desc">希尔顿 × 格兰云天积分闪促，一晚至高 10000 积分，11.11 限时开抢——先点进来看看再下单。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <a class="go go-fz" href="https://a.feizhu.com/36wrQj" target="_blank" rel="noopener">点我去抢积分闪促 →</a>
         </div>
       </section>
 
@@ -672,7 +765,7 @@
           </details>
           <details>
             <summary>美团的几个入口为什么还点不了？</summary>
-            <p>美团入口链接正在更新，好了会第一时间换上。携程酒店入口现在就能正常用，订酒店先用它。</p>
+            <p>美团外卖节、美团酒店和美团爆款酒店已经能用了。吃喝玩乐和闪购这两个入口的链接还在更新，好了会第一时间换上。携程酒店入口也能正常用。</p>
           </details>
           <details>
             <summary>这页要一直留着吗？</summary>
@@ -688,31 +781,37 @@
 
     <script>
       (function () {
-        var btn = document.getElementById('copyCtrip');
-        var tip = document.getElementById('copyTip');
-        var link = 'https://t.ctrip.cn/1E86ggg';
-        btn.addEventListener('click', function () {
-          function done() {
-            tip.textContent = '已复制，去浏览器粘贴打开';
-            tip.classList.add('ok');
-          }
-          function fallback() {
-            var ta = document.createElement('textarea');
-            ta.value = link;
-            ta.style.position = 'fixed';
-            ta.style.opacity = '0';
-            document.body.appendChild(ta);
-            ta.select();
-            try { document.execCommand('copy'); done(); }
-            catch (e) { tip.textContent = link; }
-            document.body.removeChild(ta);
-          }
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(link).then(done, fallback);
-          } else {
-            fallback();
-          }
-        });
+        function attachCopy(btnId, tipId, text, doneText) {
+          var btn = document.getElementById(btnId);
+          var tip = document.getElementById(tipId);
+          if (!btn || !tip) return;
+          btn.addEventListener('click', function () {
+            function done() {
+              tip.textContent = doneText;
+              tip.classList.add('ok');
+            }
+            function fallback() {
+              var ta = document.createElement('textarea');
+              ta.value = text;
+              ta.style.position = 'fixed';
+              ta.style.opacity = '0';
+              document.body.appendChild(ta);
+              ta.select();
+              try { document.execCommand('copy'); done(); }
+              catch (e) { tip.textContent = text; }
+              document.body.removeChild(ta);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(done, fallback);
+            } else {
+              fallback();
+            }
+          });
+        }
+        attachCopy('copyCtrip', 'copyTip', 'https://t.ctrip.cn/1E86ggg', '已复制，去浏览器粘贴打开');
+        attachCopy('copyMeituan', 'copyTipMt', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰27NjE0NDJlMDg💰', '已复制，打开美团即可领取');
+        attachCopy('copyMeituanHotel', 'copyTipMtHotel', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰36NjNmYTcxZTM💰', '已复制，打开美团即可领取');
+        attachCopy('copyMeituanHot', 'copyTipMtHot', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰3wZmI2MmY2NWQ💰', '已复制，打开美团即可领取');
       })();
     </script>
   </body>
