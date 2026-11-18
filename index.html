@@ -315,6 +315,88 @@
       .copy-tip { font-size: 13px; color: var(--ink-2); }
       .copy-tip.ok { color: var(--green); font-weight: 600; }
 
+      /* ---------- Presale list ---------- */
+      .presale {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card);
+        padding: 18px;
+        margin-bottom: 12px;
+      }
+      .presale h3 {
+        margin: 0 0 6px;
+        font-size: 17px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .presale h3 .ps-tag {
+        font-size: 11.5px;
+        font-weight: 700;
+        background: var(--blue-soft);
+        color: var(--blue-deep);
+        border-radius: 999px;
+        padding: 3px 9px;
+      }
+      @media (prefers-color-scheme: dark) { .presale h3 .ps-tag { color: var(--blue); } }
+      .presale .ps-note {
+        margin: 0 0 6px;
+        font-size: 13px;
+        color: var(--ink-2);
+        line-height: 1.65;
+      }
+      .ps-item {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .ps-item:last-child { border-bottom: 0; padding-bottom: 2px; }
+      .ps-row {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+      }
+      .ps-name { font-size: 15.5px; font-weight: 700; line-height: 1.4; }
+      .ps-price {
+        margin-left: auto;
+        flex: 0 0 auto;
+        font-size: 17px;
+        font-weight: 800;
+        color: var(--orange);
+        white-space: nowrap;
+      }
+      .ps-price small { font-size: 12px; font-weight: 600; }
+      .ps-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 7px;
+      }
+      .ps-tags span {
+        font-size: 12px;
+        background: var(--muted-bg);
+        color: var(--ink-2);
+        border-radius: 6px;
+        padding: 2px 8px;
+      }
+      .ps-meta {
+        margin-top: 7px;
+        font-size: 13px;
+        color: var(--ink-2);
+        line-height: 1.6;
+      }
+      .ps-meta .ps-code {
+        display: inline-block;
+        background: var(--blue-soft);
+        color: var(--blue-deep);
+        font-weight: 700;
+        border-radius: 6px;
+        padding: 1px 8px;
+      }
+      @media (prefers-color-scheme: dark) { .ps-meta .ps-code { color: var(--blue); } }
+
       /* ---------- FAQ / notes ---------- */
       .notes {
         background: var(--surface);
@@ -462,6 +544,102 @@
           <div class="sub-actions">
             <button class="copy-btn" type="button" id="copyCtrip">复制链接</button>
             <span class="copy-tip" id="copyTip">打不开时，复制后粘贴到浏览器打开</span>
+          </div>
+        </div>
+
+        <div class="presale">
+          <h3>携程酒店预售 · 本周主推 <span class="ps-tag">先囤后约</span></h3>
+          <p class="ps-note">先说清楚：携程后台没有活动中心，也没有双 11 活动入口，能拿出来推的就是这批酒店预售。预售单品没有直达链接，只能用口令在携程 App 里搜（第一条有口令，其余搜酒店名找预售）。另外提醒一句：促销单可能不计佣金。下面价格和预计佣金是 2026 年 11 月 18 日后台可见的数，之后可能变，以 App 里显示为准。</p>
+          <p class="ps-note">预售的玩法：先按预售价把房囤下来，日期以后再约；约不上，在标注日期前可退；标注的节假日不加价。</p>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">大同平城希尔顿惠庭酒店</span>
+              <span class="ps-price">¥338<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>5月31日前不约可退</span><span>清明不加价</span><span>春节不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥18.06 · 订法：上携程搜 <span class="ps-code">#大同预售1458</span></p>
+          </div>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">呼和浩特香格里拉大酒店</span>
+              <span class="ps-price">¥598<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>2月28日前不约可退</span><span>春节不加价</span><span>元旦不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥17.94 · 订法：在携程 App 搜酒店名找预售</p>
+          </div>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">贵阳青岩泰鑫酒店</span>
+              <span class="ps-price">¥118<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>3月31日前不约可退</span><span>清明不加价</span><span>春节不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥11.8 · 订法：在携程 App 搜酒店名找预售</p>
+          </div>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">兰州温商国际酒店</span>
+              <span class="ps-price">¥308<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>4月30日前不约可退</span><span>春节不加价</span><span>元旦不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥14.67 · 订法：在携程 App 搜酒店名找预售</p>
+          </div>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">长白山华美胜地温泉度假酒店</span>
+              <span class="ps-price">¥798<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>12月31日前不约可退</span><span>元旦不加价</span><span>春节不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥24.1 · 订法：在携程 App 搜酒店名找预售</p>
+          </div>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">临沂天河君悦酒店</span>
+              <span class="ps-price">¥218<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>3月31日前不约可退</span><span>清明不加价</span><span>春节不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥10.9 · 订法：在携程 App 搜酒店名找预售</p>
+          </div>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">扬州星程酒店（瘦西湖店）</span>
+              <span class="ps-price">¥149<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>3月31日前不约可退</span><span>清明不加价</span><span>春节不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥8.1 · 订法：在携程 App 搜酒店名找预售</p>
+          </div>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">恩施土家女儿城景澜酒店</span>
+              <span class="ps-price">¥189<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>1月31日前不约可退</span><span>元旦不加价</span><span>春节不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥9.45 · 订法：在携程 App 搜酒店名找预售</p>
+          </div>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">乌鲁木齐美居酒店（会展中心店）</span>
+              <span class="ps-price">¥258<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>3月31日前不约可退</span><span>清明不加价</span><span>春节不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥12.9 · 订法：在携程 App 搜酒店名找预售</p>
+          </div>
+
+          <div class="ps-item">
+            <div class="ps-row">
+              <span class="ps-name">厦门市华美达安可酒店</span>
+              <span class="ps-price">¥338<small> 起</small></span>
+            </div>
+            <div class="ps-tags"><span>2月28日前不约可退</span><span>元旦不加价</span><span>春节不加价</span></div>
+            <p class="ps-meta">预计佣金 ¥16.9 · 订法：在携程 App 搜酒店名找预售</p>
           </div>
         </div>
 
