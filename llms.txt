@@ -1,0 +1,26 @@
+# CPS优惠入口聚合
+
+> 飞猪、美团、携程三家官方活动的入口收在一个页里，点开就是官方小程序/活动页。美团只留团口令，复制后打开美团领取。
+
+## 总览
+
+- [CPS中转站：飞猪、美团、携程官方优惠入口聚合](https://xwdeshenghuo.github.io/cps-zhongzhuan/): 飞猪 9 个入口、美团 5 个入口、携程酒店与预售入口。
+
+## 飞猪
+
+- [飞猪百元好房领 200 元红包](https://xwdeshenghuo.github.io/cps-zhongzhuan/feizhu-baiyuan-haofang/): 飞猪2024.11.22-2026.12.31，点开直达微信小程序。
+- [飞猪酒店闪购 5 折起](https://xwdeshenghuo.github.io/cps-zhongzhuan/feizhu-jiudian-shangou/): 闪购入口，先到先得。
+- [飞猪民宿低价 5 折起](https://xwdeshenghuo.github.io/cps-zhongzhuan/feizhu-minsu-wuzhe/): 住民宿前先看专场。
+- [飞猪政府文旅补贴最高立减 600 元](https://xwdeshenghuo.github.io/cps-zhongzhuan/feizhu-zhengfu-butie/): 酒店补贴入口。
+
+## 美团（只留团口令，复制整条信息打开美团领取）
+
+- [美团外卖红包怎么领](https://xwdeshenghuo.github.io/cps-zhongzhuan/meituan-waimai-hongbao/): 先领券再点餐。
+- [美团酒店优惠券怎么领](https://xwdeshenghuo.github.io/cps-zhongzhuan/meituan-jiudian-youhui/): 119 元起、最高立减 200 元。
+- [美团爆款酒店 3 折起](https://xwdeshenghuo.github.io/cps-zhongzhuan/meituan-baokuan-jiudian/): 最高立减 200 元，先领券再挑房。
+- [美团吃喝玩乐每日福利](https://xwdeshenghuo.github.io/cps-zhongzhuan/meituan-chihewanle/): 内部优惠 3 折起，周五抢大额神券。
+- [美团闪购红包天天领](https://xwdeshenghuo.github.io/cps-zhongzhuan/meituan-shangou-hongbao/): 买日用生鲜前先领券。
+
+## 携程
+
+- [携程酒店预订入口](https://xwdeshenghuo.github.io/cps-zhongzhuan/xiecheng-jiudian/): 通用酒店链可直接打开；预售 10 单只能取口令，在携程 App 里搜酒店名找预售，促销订单可能无奖励，价格以 App 显示为准。
