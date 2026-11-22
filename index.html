@@ -273,6 +273,7 @@
       .mark-mt { background: linear-gradient(145deg, #ffe14d, #ffd100); color: var(--yellow-ink); box-shadow: inset 0 -3px 0 rgba(160, 110, 0, 0.18); }
       .mark-ct { background: linear-gradient(145deg, #4b93ff, #1f6ef2); color: #fff; box-shadow: inset 0 -3px 0 rgba(6, 50, 130, 0.25); }
       .mark-fz { background: linear-gradient(145deg, #ff8a2a, #ff5f00); color: #fff; box-shadow: inset 0 -3px 0 rgba(130, 50, 0, 0.22); }
+      .mark-tb { background: linear-gradient(145deg, #ff6a00, #ff5000); color: #fff; box-shadow: inset 0 -3px 0 rgba(130, 50, 0, 0.22); }
       .card-body { flex: 1 1 auto; min-width: 0; }
       .card h3 { margin: 3px 0 4px; font-size: 17px; font-weight: 750; line-height: 1.35; }
       .card .desc { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.6; }
@@ -335,6 +336,13 @@
       }
       .go-fz:hover { box-shadow: 0 10px 22px rgba(255, 95, 0, 0.42); }
       .go-fz:active { transform: scale(0.985); }
+      .go-tb {
+        background: linear-gradient(135deg, #ff6a00 0%, #ff5000 100%);
+        color: #fff;
+        box-shadow: 0 8px 18px rgba(255, 80, 0, 0.32);
+      }
+      .go-tb:hover { box-shadow: 0 10px 22px rgba(255, 80, 0, 0.42); }
+      .go-tb:active { transform: scale(0.985); }
       .go-off {
         background: var(--muted-bg);
         color: var(--ink-2);
@@ -955,6 +963,40 @@
             <span class="copy-tip" id="copyTipMtFlash">复制整条，打开美团即可领取</span>
           </div>
         </div>
+
+        <div class="card card-live-mt">
+          <div class="card-top">
+            <div class="mark mark-tb" aria-hidden="true">淘宝</div>
+            <div class="card-body">
+              <h3>闪购品牌日 单单有福利 · 最高<span class="amt">22元</span>，可叠加</h3>
+              <p class="desc">闪购品牌日，单单有福利，最高 22 元，可叠加——下单前先复制口令进淘宝闪购领，再下单。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <p class="mt-code"><b>淘口令：</b><span>0复zんι口~令2:/＄65BZRic＄~.👉淘宝闪购APP👈【闪购品牌日 单单有福利</span></p>
+          <div class="sub-actions">
+            <button class="copy-btn copy-btn-mt" type="button" id="copyTaobaoFlash">复制淘口令</button>
+            <span class="copy-tip" id="copyTipTbFlash">复制整条，打开淘宝闪购即可领取</span>
+          </div>
+          <a class="go go-tb" href="https://market.m.taobao.com/app/starlink/wakeup-transit/pages/download?star_id=9249&amp;slk_force_set_request=true&amp;scene=9851190316a9401eab9a2e6b86b4f4bc" target="_blank" rel="noopener">打开淘宝闪购 →</a>
+        </div>
+
+        <div class="card card-live-mt">
+          <div class="card-top">
+            <div class="mark mark-tb" aria-hidden="true">淘宝</div>
+            <div class="card-body">
+              <h3>天天领红包（全场景通用）· 最高抢<span class="amt">66元</span>大红包</h3>
+              <p class="desc">红包集合页，最全活动会场——全场景通用，最高抢 66 元大红包，先领再下单。</p>
+            </div>
+            <span class="badge badge-live">可直接用</span>
+          </div>
+          <p class="mt-code"><b>小程序链接：</b><span>mp://ypH1QbDjrjwUZEa</span></p>
+          <div class="sub-actions">
+            <button class="copy-btn copy-btn-mt" type="button" id="copyTaobaoHongbao">复制小程序链接</button>
+            <span class="copy-tip" id="copyTipTbHongbao">复制后在对应 App 内打开</span>
+          </div>
+          <a class="go go-tb" href="mp://ypH1QbDjrjwUZEa">打开领红包 →</a>
+        </div>
       </section>
 
       <section aria-labelledby="h-faq">
@@ -1024,6 +1066,8 @@
         attachCopy('copyMeituanHot', 'copyTipMtHot', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰3wZmI2MmY2NWQ💰', '已复制，打开美团即可领取');
         attachCopy('copyMeituanFun', 'copyTipMtFun', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰nzMDA4Y2NhMGM💰', '已复制，打开美团即可领取');
         attachCopy('copyMeituanFlash', 'copyTipMtFlash', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰o6NjRjMGJmM2I💰', '已复制，打开美团即可领取');
+        attachCopy('copyTaobaoFlash', 'copyTipTbFlash', '0复zんι口~令2:/＄65BZRic＄~.👉淘宝闪购APP👈【闪购品牌日 单单有福利', '已复制，打开淘宝闪购即可领取');
+        attachCopy('copyTaobaoHongbao', 'copyTipTbHongbao', 'mp://ypH1QbDjrjwUZEa', '已复制，在对应 App 内打开');
         var heroBtn = document.getElementById('heroCopy');
         if (heroBtn) {
           var heroCode = '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰lmMjg2MjMyYzU💰';
