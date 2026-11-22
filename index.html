@@ -343,6 +343,7 @@
       }
       .go-tb:hover { box-shadow: 0 10px 22px rgba(255, 80, 0, 0.42); }
       .go-tb:active { transform: scale(0.985); }
+      .promo-img { width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 0 12px; }
       .go-off {
         background: var(--muted-bg);
         color: var(--ink-2);
@@ -982,6 +983,7 @@
         </div>
 
         <div class="card card-live-mt">
+          <img class="promo-img" src="images/taobao-hongbao-daily.jpg" alt="淘宝闪购天天领红包：抢超值红包组合，最高抢66元大红包" loading="lazy" />
           <div class="card-top">
             <div class="mark mark-tb" aria-hidden="true">淘宝</div>
             <div class="card-body">
@@ -990,12 +992,22 @@
             </div>
             <span class="badge badge-live">可直接用</span>
           </div>
-          <p class="mt-code"><b>小程序链接：</b><span>mp://ypH1QbDjrjwUZEa</span></p>
+          <p class="mt-code"><b>淘口令：</b><span>0复zんι文本2:/＄6gZPUGG＄~.👉淘宝闪购APP👈【天天领红包（全场景通用）天天领红包（全场景通用）最高抢66元大红包红包集合页，最全活动会场</span></p>
+          <div class="sub-actions">
+            <button class="copy-btn copy-btn-mt" type="button" id="copyTaobaoKouling">复制淘口令</button>
+            <span class="copy-tip" id="copyTipTbKouling">复制整条，打开淘宝闪购即可领取</span>
+          </div>
+          <p class="mt-code"><b>吱口令：</b><span>DXdJZxu30Ko</span></p>
+          <div class="sub-actions">
+            <button class="copy-btn copy-btn-mt" type="button" id="copyTaobaoZhi">复制吱口令</button>
+            <span class="copy-tip" id="copyTipTbZhi">复制后打开支付宝即可领取</span>
+          </div>
+          <p class="mt-code"><b>小程序链接：</b><span>mp://JO2uj5uftOF0Wvh</span></p>
           <div class="sub-actions">
             <button class="copy-btn copy-btn-mt" type="button" id="copyTaobaoHongbao">复制小程序链接</button>
             <span class="copy-tip" id="copyTipTbHongbao">复制后在对应 App 内打开</span>
           </div>
-          <a class="go go-tb" href="mp://ypH1QbDjrjwUZEa">打开领红包 →</a>
+          <a class="go go-tb" href="https://m.duanqu.com/?_ariver_appid=8251537&amp;page=plugin-private%3A%2F%2F2021004134685665%2Fpages%2Ftaoke-guide%2Findex%3Ffrom%3Dminiapp.taobao%26channelInfo%3D%7B%22subSubChannel%22%3A%22miniapp.taobao.et%22%7D%26alsc_exsrc%3DES0006299852%26scene%3D0032058b17dd4deb9a09e3fc0928dbc8" target="_blank" rel="noopener">打开领红包 →</a>
         </div>
       </section>
 
@@ -1067,7 +1079,9 @@
         attachCopy('copyMeituanFun', 'copyTipMtFun', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰nzMDA4Y2NhMGM💰', '已复制，打开美团即可领取');
         attachCopy('copyMeituanFlash', 'copyTipMtFlash', '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰o6NjRjMGJmM2I💰', '已复制，打开美团即可领取');
         attachCopy('copyTaobaoFlash', 'copyTipTbFlash', '0复zんι口~令2:/＄65BZRic＄~.👉淘宝闪购APP👈【闪购品牌日 单单有福利', '已复制，打开淘宝闪购即可领取');
-        attachCopy('copyTaobaoHongbao', 'copyTipTbHongbao', 'mp://ypH1QbDjrjwUZEa', '已复制，在对应 App 内打开');
+        attachCopy('copyTaobaoKouling', 'copyTipTbKouling', '0复zんι文本2:/＄6gZPUGG＄~.👉淘宝闪购APP👈【天天领红包（全场景通用）天天领红包（全场景通用）最高抢66元大红包红包集合页，最全活动会场', '已复制，打开淘宝闪购即可领取');
+        attachCopy('copyTaobaoZhi', 'copyTipTbZhi', 'DXdJZxu30Ko', '已复制，打开支付宝即可领取');
+        attachCopy('copyTaobaoHongbao', 'copyTipTbHongbao', 'mp://JO2uj5uftOF0Wvh', '已复制，在对应 App 内打开');
         var heroBtn = document.getElementById('heroCopy');
         if (heroBtn) {
           var heroCode = '1来美团，吃得更好，生活更好❤️复制整条信息，打开👉美团👈 http:/💰lmMjg2MjMyYzU💰';
